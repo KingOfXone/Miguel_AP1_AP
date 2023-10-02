@@ -4,36 +4,36 @@ using System.Linq.Expressions;
 
 namespace Miguel_AP1_AP.BLL
 {
-    public class Aportes
+    public class AportesBll
     {
 
         private Contexto _contexto;
 
-        public Aportes(Contexto contexto)
+        public AportesBll(Contexto contexto)
         {
             _contexto = contexto;
         }
 
-        public bool Existe(int LibroId)
+        public bool Existe(int AportesId)
         {
-            return _contexto.aportes.Any(o => o.AportesId == LibroId);
+            return _contexto.aportes.Any(o => o.AportesId == AportesId);
 
         }
 
-        private bool Insertar(Aportes libros)
+        private bool Insertar(AportesBll aportes)
         {
-            _contexto.aportes.Add(libros);
+            _contexto.aportes.Add(aportes);
             return _contexto.SaveChanges() > 0;
         }
 
-        private bool Modificar(Aportes libros)
+        private bool Modificar(AportesBll aportes)
         {
-            _contexto.Entry(libros).State = EntityState.Modified;
+            _contexto.Entry(aportes).State = EntityState.Modified;
             return _contexto.SaveChanges() > 0;
 
         }
 
-        public bool Guardar(Aportes aportes)
+        public bool Guardar(AportesBll aportes)
         {
             if (!Existe(aportes.AportesId))
                 return this.Insertar(aportes);
@@ -41,13 +41,13 @@ namespace Miguel_AP1_AP.BLL
                 return this.Modificar(aportes);
         }
 
-        public bool Eliminar(Aportes aportes)
+        public bool Eliminar(AportesBll aportes)
         {
             _contexto.Entry(aportes).State = EntityState.Deleted;
             return _contexto.SaveChanges() > 0;
         }
 
-        public Aportes? Buscar(int AportesId)
+        public AportesBll? Buscar(int AportesId)
         {
             return _contexto.aportes
             .Where(o => o.AportesId == AportesId)
@@ -55,7 +55,7 @@ namespace Miguel_AP1_AP.BLL
             .SingleOrDefault();
         }
 
-        public List<Aportes> GetList(Expression<Func<Aportes, bool>> Criterio)
+        public List<AportesBll> GetList(Expression<Func<AportesBll, bool>> Criterio)
         {
             return _contexto.aportes
             .AsNoTracking()

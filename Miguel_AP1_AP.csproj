@@ -10,8 +10,6 @@
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="obj\" />
-    <Folder Include="Pages\Consultas\" />
-    <Folder Include="Pages\Registros\" />
   </ItemGroup>
 
   <ItemGroup>
