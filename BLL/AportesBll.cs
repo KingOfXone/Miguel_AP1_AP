@@ -9,6 +9,8 @@ namespace Miguel_AP1_AP.BLL
 
         private Contexto _contexto;
 
+        public int AportesId { get; private set; }
+
         public AportesBll(Contexto contexto)
         {
             _contexto = contexto;

@@ -4,6 +4,7 @@
 @page "/aportes/{AportesId:int}"
 
 @inject AportesBLL aportesBll
+@inject Model model
 
 <EditForm Model="aportes" OnValidSubmit="Guardar">
     <DataAnnotationsValidator />
