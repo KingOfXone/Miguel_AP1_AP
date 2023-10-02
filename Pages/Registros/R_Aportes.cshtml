@@ -1,0 +1,107 @@
+﻿@page
+@model Miguel_AP1_AP.Pages.Registros.IndexModel
+@page "/R_Aportes"
+@page "/aportes/{AportesId:int}"
+
+@inject AportesBLL aportesBll
+
+<EditForm Model="aportes" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Aportes</h3>
+        </div>
+        
+           <div class="form-row align-items-center">
+                <label>AportesID</label>
+                 <div class="input-group">
+                    <InputNumber @bind-Value="aportes.AportesId" class="form-control col-4" />
+                    <div class="input-group-append">
+                        <button type="button" class="input-group-text btn btn-primary" @onclick="Buscar"> <i class="oi oi-magnifying-glass" /></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Título</label>
+                <InputText @bind-Value="aportes.Titulo" class="form-control" />
+                <ValidationMessage For="@(() => aportes.Aportes)" />
+            </div>
+
+            <div class="form-group">
+                <label>Precio</label>
+                <InputNumber @bind-Value="aportes.monto" class="form-control" />
+                <ValidationMessage For="@(() => aportes.monto)" />
+            </div>
+        <div class="form-group">
+            <label>Precio</label>
+            <InputNumber @bind-Value="aportes.monto" class="form-control" />
+            <ValidationMessage For="@(() => aportes.Persona)" />
+        </div>
+
+        </div>
+        <div class="card-footer">
+            <div class="form-group text-center" display: inline-block>
+                <button type="submit" class="bi bi-file-earmark-fill btn btn-lg btn-primary"  @onclick="Nuevo"> Nuevo</button>
+                <button type="submit" class="bi bi-file-earmark-text-fill btn btn-lg btn-success" @onclick="Guardar"> Guardar</button>
+                <button type="submit" class="bi bi-trash btn btn-lg btn-danger"@onclick="Eliminar">Eliminar</button>
+            </div>
+        </div>
+
+</EditForm>
+
+@code {
+
+    [Parameter]
+
+    public int AportesId { get; set; }
+    public Aportes aporte { get; set; } = new Aportes();
+    
+    protected override void OnInitialized()
+    {
+        if(AporteId > 0)
+        {
+            this.aportes.AportesId = AportesId;
+            this.Buscar();
+        }
+    }
+
+    public void Buscar()
+    {
+        var AportesEncontrado = AportesBll.Buscar(aportes.AportesId);
+
+        if(aportesEncontrado != null)
+        {
+            this.aporte = aportesEncontrado;
+        }
+    }
+
+    public void Nuevo()
+    {
+        this.aportes = new Aporte();
+    }
+
+    public void Eliminar()
+    {
+        var eliminado = AportesBll.Eliminar(aporte);
+
+        if (eliminado)
+        {
+            Nuevo();   
+        }
+
+    }
+
+    public void Guardar()
+    {
+       var guardado = AportesBll.Guardar(aportes);
+
+        if (guardado)
+        {
+            Nuevo();
+        }
+    }
+
+}
