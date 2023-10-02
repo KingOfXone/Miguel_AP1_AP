@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿
+using Microsoft.EntityFrameworkCore;
+using Miguel_AP1_AP.BLL;
 namespace Miguel_AP1_AP.DAL
 {
-public class Context : DbContext
+public class Contexto : DbContext
     {
-        public Context(DbContextOptions<Context> options) : base(options) { }
+        public DbSet<Aportes> aportes { get; set; } 
+        public Contexto(DbContextOptions<Contexto> options) : base(options) { }
     }
 }

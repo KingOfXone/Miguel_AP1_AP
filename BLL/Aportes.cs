@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Miguel_AP1_AP.DAL;
 using System.Linq.Expressions;
 
 namespace Miguel_AP1_AP.BLL
@@ -15,13 +16,13 @@ namespace Miguel_AP1_AP.BLL
 
         public bool Existe(int LibroId)
         {
-            return _contexto.libros.Any(o => o.LibroId == LibroId);
+            return _contexto.aportes.Any(o => o.AportesId == LibroId);
 
         }
 
         private bool Insertar(Aportes libros)
         {
-            _contexto.libros.Add(libros);
+            _contexto.aportes.Add(libros);
             return _contexto.SaveChanges() > 0;
         }
 
