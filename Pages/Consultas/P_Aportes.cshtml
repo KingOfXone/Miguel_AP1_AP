@@ -1,5 +1,6 @@
 ﻿@page "/P_Aportes"
 @using Miguel_AP1_AP.BLL;
+@using static AspNetCore.Models_Models;
 @model Miguel_AP1_AP.Pages.Consultas.IndexModel
 @inject AportesBll aportesBll
 
@@ -32,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var aportes in aportes)
+                @foreach (var aportes in portes)
                 {
                     <tr>
                         <td>@aportes.AportesId</td>
@@ -49,8 +50,8 @@
 
 @code {
 
-    public Aportes aportesibro { set; get; } = new Aportes();
-    public List<Libros> libros { get; set; } = new List<Aportes>();
+    public Aportes aportes { set; get; } = new Aportes();
+    public List<Aportes> aportes { get; set; } = new List<Aportes>();
     public void Buscar()
     {
         aportes =  AportesBll.GetList(o => true);

@@ -1,15 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 @page
 @model Miguel_AP1_AP.Models.ModelsModel
+
 @{
+    public class AportesBll {
 
-public class Aportes{
-
-    [Required(ErrorMessage ="El AportesId es requerido")]
-    public int LibroId { get; set; }
-    [Required(ErrorMessage ="Persona es requerido")]
+    [Required(ErrorMessage = "El AportesId es requerido")]
+    public int AportesId { get; set; }
+    [Required(ErrorMessage = "Persona es requerido")]
     public string? Titulo { get; set; }
-    [Required(ErrorMessage ="El monto es requerido")]
+    [Required(ErrorMessage = "El monto es requerido")]
     public double Precio { get; set; }
+        }
 
 }
