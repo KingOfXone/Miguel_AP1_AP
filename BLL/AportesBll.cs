@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Miguel_AP1_AP.DAL;
+using Miguel_AP1_AP.Models;
 using Radzen;
 using System.Linq;
 using System.Linq.Dynamic.Core;
@@ -12,8 +13,6 @@ namespace Miguel_AP1_AP.BLL
 
         private Contexto _contexto;
 
-        public int AportesId { get; private set; }
-
         public AportesBll(Contexto contexto)
         {
             _contexto = contexto;
@@ -25,20 +24,20 @@ namespace Miguel_AP1_AP.BLL
 
         }
 
-        private bool Insertar(AportesBll aportes)
+        private bool Insertar(Aportes aportes)
         {
             Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Aportes> entityEntry = _contexto.aportes.Add(aportes);
             return _contexto.SaveChanges() > 0;
         }
 
-        private bool Modificar(AportesBll aportes)
+        private bool Modificar(Aportes aportes)
         {
             _contexto.Entry(aportes).State = EntityState.Modified;
             return _contexto.SaveChanges() > 0;
 
         }
 
-        public bool Guardar(AportesBll aportes)
+        public bool Guardar(Aportes aportes)
         {
             if (!Existe(aportes.AportesId))
                 return this.Insertar(aportes);
@@ -46,13 +45,13 @@ namespace Miguel_AP1_AP.BLL
                 return this.Modificar(aportes);
         }
 
-        public bool Eliminar(AportesBll aportes)
+        public bool Eliminar(Aportes aportes)
         {
             _contexto.Entry(aportes).State = EntityState.Deleted;
             return _contexto.SaveChanges() > 0;
         }
 
-        public AportesBll? Buscar(int AportesId)
+        public Aportes? Buscar(int AportesId)
         {
             return _contexto.aportes
             .Where(o => o.AportesId == AportesId)
@@ -60,7 +59,7 @@ namespace Miguel_AP1_AP.BLL
             .SingleOrDefault();
         }
 
-        public List<AportesBll> GetList(Expression<Func<AportesBll, bool>> Criterio)
+        public List<Aportes> GetList(Expression<Func<Aportes, bool>> Criterio)
         {
             return _contexto.aportes
             .AsNoTracking()
