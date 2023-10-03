@@ -10,3 +10,5 @@ namespace Miguel_AP1_AP.Pages.Registros
         }
     }
 }
+
+

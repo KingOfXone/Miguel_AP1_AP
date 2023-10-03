@@ -7,7 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\net7.0\appsettings.Development.json" />
+    <Content Include="bin\Debug\net7.0\appsettings.json" />
+    <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.deps.json" />
+    <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.runtimeconfig.json" />
+    <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.staticwebassets.runtime.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Release\net7.0\" />
     <Folder Include="obj\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net7.0\Microsoft.Data.Sqlite.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll" />
+    <None Include="bin\Debug\net7.0\Miguel_AP1_AP.dll" />
+    <None Include="bin\Debug\net7.0\Miguel_AP1_AP.exe" />
+    <None Include="bin\Debug\net7.0\Miguel_AP1_AP.pdb" />
+    <None Include="bin\Debug\net7.0\Radzen.Blazor.dll" />
+    <None Include="bin\Debug\net7.0\SQLitePCLRaw.core.dll" />
+    <None Include="bin\Debug\net7.0\System.Linq.Dynamic.Core.dll" />
   </ItemGroup>
 
   <ItemGroup>

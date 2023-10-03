@@ -1,4 +1,6 @@
 ﻿@page "/P_Aportes"
+@using using Miguel_AP1_AP.DLL;
+@using Miguel_AP1_AP.DAL;
 @using static AspNetCore.Models_Models;
 @model Miguel_AP1_AP.Pages.Consultas.IndexModel
 @inject AportesBll aportesBll
@@ -32,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var aportes in portes)
+                @foreach (var aportes in aportes)
                 {
                     <tr>
                         <td>@aportes.AportesId</td>
