@@ -7,16 +7,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net7.0\Miguel_AP1_AP.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net7.0\Miguel_AP1_AP.GlobalUsings.g.cs" />
+    <Compile Include="obj\Debug\net7.0\Miguel_AP1_AP.RazorAssemblyInfo.cs" />
+    <Compile Include="obj\Release\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net7.0\Miguel_AP1_AP.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net7.0\Miguel_AP1_AP.GlobalUsings.g.cs" />
+    <Compile Include="obj\Release\net7.0\Miguel_AP1_AP.RazorAssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="bin\Debug\net7.0\appsettings.Development.json" />
     <Content Include="bin\Debug\net7.0\appsettings.json" />
     <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.deps.json" />
     <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.runtimeconfig.json" />
     <Content Include="bin\Debug\net7.0\Miguel_AP1_AP.staticwebassets.runtime.json" />
+    <Content Include="obj\Debug\net7.0\Miguel_AP1_AP.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net7.0\project.razor.vs.json" />
+    <Content Include="obj\Debug\net7.0\scopedcss\bundle\Miguel_AP1_AP.styles.css" />
+    <Content Include="obj\Debug\net7.0\scopedcss\projectbundle\Miguel_AP1_AP.bundle.scp.css" />
+    <Content Include="obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css" />
+    <Content Include="obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css" />
+    <Content Include="obj\Debug\net7.0\staticwebassets.build.json" />
+    <Content Include="obj\Debug\net7.0\staticwebassets.development.json" />
+    <Content Include="obj\Debug\net7.0\staticwebassets.pack.json" />
+    <Content Include="obj\Miguel_AP1_AP.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="bin\Release\net7.0\" />
-    <Folder Include="obj\" />
+    <Folder Include="obj\Release\net7.0\refint\" />
+    <Folder Include="obj\Release\net7.0\ref\" />
+    <Folder Include="obj\Release\net7.0\staticwebassets\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +56,31 @@
     <None Include="bin\Debug\net7.0\Radzen.Blazor.dll" />
     <None Include="bin\Debug\net7.0\SQLitePCLRaw.core.dll" />
     <None Include="bin\Debug\net7.0\System.Linq.Dynamic.Core.dll" />
+    <None Include="obj\Debug\net7.0\apphost.exe" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.assets.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.csproj.CopyComplete" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.dll" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.pdb" />
+    <None Include="obj\Debug\net7.0\Miguel_AP1_AP.RazorAssemblyInfo.cache" />
+    <None Include="obj\Debug\net7.0\refint\Miguel_AP1_AP.dll" />
+    <None Include="obj\Debug\net7.0\ref\Miguel_AP1_AP.dll" />
+    <None Include="obj\Debug\net7.0\staticwebassets\msbuild.build.Miguel_AP1_AP.props" />
+    <None Include="obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Miguel_AP1_AP.props" />
+    <None Include="obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Miguel_AP1_AP.props" />
+    <None Include="obj\Debug\net7.0\staticwebassets\msbuild.Miguel_AP1_AP.Microsoft.AspNetCore.StaticWebAssets.props" />
+    <None Include="obj\Miguel_AP1_AP.csproj.nuget.g.props" />
+    <None Include="obj\Miguel_AP1_AP.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\net7.0\Miguel_AP1_AP.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net7.0\Miguel_AP1_AP.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Release\net7.0\Miguel_AP1_AP.RazorAssemblyInfo.cache" />
   </ItemGroup>
 
   <ItemGroup>

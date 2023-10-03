@@ -1,11 +1,11 @@
-﻿@page
+﻿@page "/R_Aportes"
+@page "/aportes/ {AportesId:int}
 @using Miguel_AP1_AP.DAL;
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
 @using Miguel_AP1_AP.BLL;  
-@using static AspNetCore.Models_Models;
-@inject Model model;
-@page "/R_Aportes"
-@page "/aportes/{AportesId:int}
+@using Miguel_AP1_AP.Models
+@using Miguel_AP1_AP.Pages.Consultas;
+
 @inject AportesBll aportesBll
 
 <EditForm Model="aportes" OnValidSubmit="Guardar">
