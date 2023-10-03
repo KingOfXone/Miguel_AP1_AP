@@ -81,6 +81,11 @@
     <None Include="obj\Release\net7.0\Miguel_AP1_AP.AssemblyInfoInputs.cache" />
     <None Include="obj\Release\net7.0\Miguel_AP1_AP.GeneratedMSBuildEditorConfig.editorconfig" />
     <None Include="obj\Release\net7.0\Miguel_AP1_AP.RazorAssemblyInfo.cache" />
+    <None Include="Pages\Consultas\P_Aportes.razor" />
+    <None Include="Pages\Error.cshtml" />
+    <None Include="Pages\Index.razor" />
+    <None Include="Pages\Registros\R_Aportes.razor" />
+    <None Include="Pages\_Host.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
