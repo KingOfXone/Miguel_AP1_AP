@@ -1,10 +1,10 @@
 ﻿@page
-@model Miguel_AP1_AP.Pages.Registros.IndexModel
-@page "/R_Aportes"
-@page "/aportes/{AportesId:int}"
-
-@inject AportesBLL aportesBll
+@using Microsoft.EntityFrameworkCore.Metadata.Internal;
+@using Miguel_AP1_AP.BLL    
 @inject Model model
+@page "/R_Aportes"
+@page "/aportes/{AportesId:int}
+@inject AportesBLL aportesBll
 
 <EditForm Model="aportes" OnValidSubmit="Guardar">
     <DataAnnotationsValidator />
