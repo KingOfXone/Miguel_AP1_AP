@@ -1,5 +1,5 @@
 ﻿@page "/R_Aportes"
-@page "/aportes/ {AportesId:int}
+@page "/R_Aportes/{AportesId:int}"
 @using Miguel_AP1_AP.DAL;
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
 @using Miguel_AP1_AP.BLL;  
@@ -9,7 +9,7 @@
 
 @inject AportesBll aportesBll
 
-<EditForm Model="aportes" OnValidSubmit="Guardar">
+<EditForm Model="aportes" OnValidSubmit="Guardar" >
     <DataAnnotationsValidator />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -27,22 +27,28 @@
                     </div>
                 </div>
             </div>
-            
+
+        <div class="form-group">
+            <label>Fecha</label>
+            <InputDate @bind-Value="aportes.Fecha" class="form-control" />
+            <ValidationMessage For="@(() => aportes.Fecha)" />
+        </div>
+
             <div class="form-group">
-                <label>Título</label>
-                <InputText @bind-Value="aportes.Titulo" class="form-control" />
-                <ValidationMessage For="@(() => aportes.Aportes)" />
+                <label>Persona</label>
+                <InputText @bind-Value="aportes.Persona" class="form-control" />
+            <ValidationMessage For="@(() => aportes.Persona)" />
             </div>
 
             <div class="form-group">
-                <label>Precio</label>
-                <InputNumber @bind-Value="aportes.monto" class="form-control" />
-                <ValidationMessage For="@(() => aportes.monto)" />
+            <label>Monto</label>
+                <InputNumber @bind-Value="aportes.Monto" class="form-control" />
+            <ValidationMessage For="@(() => aportes.Monto)" />
             </div>
         <div class="form-group">
-            <label>Precio</label>
-            <InputNumber @bind-Value="aportes.monto" class="form-control" />
-            <ValidationMessage For="@(() => aportes.Persona)" />
+            <label>Observaci&oacute;</label>
+            <InputText @bind-Value="aportes.Observacion" class="form-control" />
+            <ValidationMessage For="@(() => aportes.Observacion)" />
         </div>
 
         </div>
@@ -58,54 +64,45 @@
 
 @code {
 
-    [Parameter]
+    public Aportes aportes { set; get; } = new Aportes();
 
+    [Parameter]
     public int AportesId { get; set; }
-    public Aportes aportes { get; set; } = new Aportes();
-    
+
     protected override void OnInitialized()
     {
-        if(AporteId > 0)
+        if (this.AportesId > 0)
         {
-            this.aportes.AportesId = AportesId;
-            this.Buscar();
+            this.aportes.AportesId = this.AportesId;
+            Buscar();
         }
     }
-
     public void Buscar()
     {
-        var AportesEncontrado = AportesBll.Buscar(aportes.AportesId);
-
-        if(aportesEncontrado != null)
+        var A = aportesBll.Buscar(aportes.AportesId);
+        if (A != null)
         {
-            this.aportes = aportesEncontrado;
+            this.aportes = A;
         }
     }
 
-    public void Nuevo()
+    void Nuevo()
     {
         this.aportes = new Aportes();
     }
 
-    public void Eliminar()
+    void Guardar()
     {
-        var eliminado = AportesBll.Eliminar(aportes);
-
-        if (eliminado)
+        if (AportesId > 0)
         {
-            Nuevo();   
+            aportesBll.Guardar(aportes);
         }
-
     }
 
-    public void Guardar()
+    void Eliminar()
     {
-       var guardado = AportesBll.Guardar(aportes);
-
-        if (guardado)
-        {
-            Nuevo();
-        }
+        aportesBll.Eliminar(this.aportes);
+        this.Nuevo();
     }
 
 }
