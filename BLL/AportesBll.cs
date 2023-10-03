@@ -27,7 +27,7 @@ namespace Miguel_AP1_AP.BLL
 
         private bool Insertar(AportesBll aportes)
         {
-            _contexto.aportes.Add(aportes);
+            Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Aportes> entityEntry = _contexto.aportes.Add(aportes);
             return _contexto.SaveChanges() > 0;
         }
 

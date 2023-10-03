@@ -4,6 +4,7 @@
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
 @using Miguel_AP1_AP.BLL;  
 @using Miguel_AP1_AP.Models
+@using Miguel_AP1_AP.Pages.Registros
 @using Miguel_AP1_AP.Pages.Consultas;
 
 @inject AportesBll aportesBll
@@ -60,7 +61,7 @@
     [Parameter]
 
     public int AportesId { get; set; }
-    public Aportes aporte { get; set; } = new Aportes();
+    public Aportes aportes { get; set; } = new Aportes();
     
     protected override void OnInitialized()
     {
@@ -77,18 +78,18 @@
 
         if(aportesEncontrado != null)
         {
-            this.aporte = aportesEncontrado;
+            this.aportes = aportesEncontrado;
         }
     }
 
     public void Nuevo()
     {
-        this.aportes = new Aporte();
+        this.aportes = new Aportes();
     }
 
     public void Eliminar()
     {
-        var eliminado = AportesBll.Eliminar(aporte);
+        var eliminado = AportesBll.Eliminar(aportes);
 
         if (eliminado)
         {

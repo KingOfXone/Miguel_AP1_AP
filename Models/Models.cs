@@ -10,7 +10,7 @@ namespace Miguel_AP1_AP.Models
     [Required(ErrorMessage = "Persona es requerido")]
     public string? Titulo { get; set; }
     [Required(ErrorMessage = "El monto es requerido")]
-    public double Precio { get; set; }
+    public double aporte { get; set; }
 }
 
 }
