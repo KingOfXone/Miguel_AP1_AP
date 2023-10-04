@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Miguel_AP1_AP.DAL;
-using Miguel_AP1_AP.Models;
 using Radzen;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 
-namespace Miguel_AP1_AP.BLL
-{
+
     public class AportesBll
     {
 
@@ -68,5 +65,4 @@ namespace Miguel_AP1_AP.BLL
         }
 
     }
-}
 

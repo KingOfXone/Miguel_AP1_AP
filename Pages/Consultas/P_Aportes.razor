@@ -1,13 +1,8 @@
 ﻿@page "/P_Aportes"
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
-@using Miguel_AP1_AP.BLL;
-@using Miguel_AP1_AP.DAL;
-@model Miguel_AP1_AP.Pages.Consultas.IndexModel
 @inject AportesBll aportesBll
 
-<EditForm Model="Aportes">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <DataAnnotationsValidator />
+
     <div class="card">
         <div class="card-header text-center">
             <h3>Consulta de Aportes</h3>
@@ -34,25 +29,32 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var Aportes in aportes)
+                @foreach (var aportes in Aportes)
                 {
                     <tr>
                         <td>@aportes.AportesId</td>
-                        <td>@aportes.Titulo</td>
-                        <td>@aportes.Precio</td>
+                        <td>@aportes.Persona</td>
+                        <td>@aportes.Monto</td>
                         <th>@aportes.Fecha</th>
-                        <td><a href="aportes/@aportes.AportesId">Ver</a></td>
+                        <td><a href="R_Aportes/@aportes.AportesId">Ver</a></td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-</EditForm>
+
 
 @code {
 
-    public Aportes aportes { set; get; } = new Aportes();
-    public List<Aportes> Aportes { get; set; } = new List<Aportes>();
-    public void Buscar() => Aportes = AportesBll.GetList(o => true);
+     Aportes aportes { set; get; } = new Aportes();
+    List<Aportes> Aportes { get; set; } = new List<Aportes>();
+
+    protected override void OnInitialized() {
+        Aportes = aportesBll.GetList(o => true);
+    
+    }
+    void Buscar() {
+        Aportes = aportesBll.GetList(o => true);
+    }
 
 }

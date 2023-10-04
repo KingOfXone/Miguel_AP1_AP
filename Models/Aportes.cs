@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Miguel_AP1_AP.Models
-{
+
     public class Aportes
     {
         
@@ -17,4 +16,4 @@ namespace Miguel_AP1_AP.Models
 
         public string? Observacion { get; set; }
     }
-}
+

@@ -1,9 +1,6 @@
 ﻿@page "/R_Aportes"
 @page "/R_Aportes/{AportesId:int}"
-@using Miguel_AP1_AP.DAL;
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
-@using Miguel_AP1_AP.BLL;  
-@using Miguel_AP1_AP.Models
 @using Miguel_AP1_AP.Pages.Registros
 @using Miguel_AP1_AP.Pages.Consultas;
 
@@ -93,10 +90,10 @@
 
     void Guardar()
     {
-        if (AportesId > 0)
-        {
+        
             aportesBll.Guardar(aportes);
-        }
+            Console.WriteLine("entra");
+        
     }
 
     void Eliminar()
